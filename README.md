@@ -161,5 +161,18 @@ Participa (***CódigoTenista***, ***CódigoTorneio***, **AnoTorneio**, Colocaç�
 5)	Liste todos os países cadastrados  
 6)	Liste as cidades com o nome da cidade e do país  
 7)	Liste todos os tenistas por ordem alfabética com o nome da sua cidade  
-8)	Liste todos os participantes desde 2020    
-9)	Entre com dados na tabela particpa, relacionando torneio tenistas  
+8)	Insira dados na tabela participa
+9)	Liste todos os participantes desde 2020   
+
+# Observações para Aplicação e Avaliação do Exercício
+### 1. Dependência Referencial
+As tabelas devem ser criadas e populadas respeitando a hierarquia de Chaves Estrangeiras (FK):
+
+        pais  
+        cidade (depende de pais)  
+        torneio e tenista (dependem de cidade)  
+        participa (depende de tenista e torneio)  
+
+### 2. Padrão de Junção e Produto Cartesiano
+Nos exercícios de consulta (como o Exercício 9), a solução indicada no gabarito utiliza produto cartesiano.  
+Caso o aluno utilize a sintaxe *INNER JOIN ... ON*, o resultado será equivalente, mas vale ressaltar a importância de compreender ambos os padrões.
