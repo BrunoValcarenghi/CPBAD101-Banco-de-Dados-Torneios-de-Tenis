@@ -10,10 +10,10 @@
 4)	É necessário vincular cada cidade a um país (um país possui obviamente várias cidades e uma cidade está em apenas um país). 
 5)	Sobre o país deseja-se armazenar o código e o nome.
 6)	De cada torneio podem participar diversos tenistas e um mesmo tenista poderá participar de diversos torneios. 
-7)	Sobre cada tenista deseja-se armazenar o código, o nome e a data de nascimento. Um tenista está relacionado a uma cidade e uma cidade pode possuir vários tenistas.
+7)	Sobre cada tenista deseja-se armazenar o código e o nome. Um tenista está relacionado a uma cidade e uma cidade pode possuir vários tenistas.
 8)	Deseja-se também armazenar a colocação de cada tenista em cada torneio por ele disputado.   
 A.	 É importante considerar que um mesmo tenista pode disputar o mesmo torneio em anos diferentes. Assim, o Sr. Guga, por exemplo, pode participar de várias edições de Roland Garros.   
-B.   Em diferentes anos do torneio o atleta pode ficar em diferentes colocações, por exemplo o Sr. Guga pode acabar ficando com o vigésimo lugar em 1995 e com o primeiro em 1997 no torneio Roland Garros.
+B.   Em diferentes anos do torneio o atleta pode ficar em diferentes colocações, por exemplo o Sr. Guga pode acabar ficando com o vigésimo (armazena numero inteiro 20 no banco de dados) lugar em 1995 e com o primeiro (armazena numero inteiro 1 no banco de dados) em 1997 no torneio Roland Garros.
 10)	É ainda necessário armazenar dados sobre os patrocinadores atuais dos tenistas. 
 11)	Sobre cada patrocinador deve ser armazenado o código e o nome.   
 A.	Um patrocinador pode patrocinar vários tenistas e um tenista pode ser patrocinado por vários patrocinadores.
@@ -40,7 +40,6 @@ erDiagram
     TENISTA {
         int CodTenista PK
         string NomeTenista
-        date DataNascimento
     }
 
     PATROCINADOR {
@@ -53,7 +52,7 @@ erDiagram
         int CodTorneio FK
         int CodTenista FK
         int Ano
-        string Classificacao
+        int Classificacao
     }
 
     %% Tabela Intermediária (Patrocinador <-> Tenista)
@@ -75,25 +74,28 @@ erDiagram
 ```
 
 # Modelo Lógico:   
+**(Está em negrito chaves primárias)**
+*(Está em itálico chaves estrangeiras)*
+***(Está em negrito e itálico chaves primárias que são compostas por chaves estrangeiras)***
 
-Pais (***CódigoPais***, NomePais)  
+Pais (**CódigoPais**, NomePais)  
 
-Cidade (***CódigoCidade***, NomeCIdade, *CódigoPaís*)   
+Cidade (**CódigoCidade**, NomeCIdade, *CódigoPaís*)   
 	CódigoPaís Referencia País   
   
-Torneio (***CódigoTorneio***, NomeTorneio, *CódigoCidade*)   
+Torneio (**CódigoTorneio**, NomeTorneio, *CódigoCidade*)   
 	CódigoCidade Referencia Cidade   
   
-Tenista (***CódigoTenista***, NomeTenista, *CódigoCidade*)   
+Tenista (**CódigoTenista**, NomeTenista, *CódigoCidade*)   
 	CódigoCidade Referencia Cidade   
   
-Patrocinador (***CódigoPatrocinador***, NomePatrocinador)   
+Patrocinador (**CódigoPatrocinador**, NomePatrocinador)   
 
 Patrocina (***CódigoPatrocinador***, ***CódigoTenista***)   
 	CódigoPatrocinador referencia Patrocinador    
 	CódigoTenista Referencia Tenista   
   
-Participa (***CódigoTenista***, ***CódigoTorneio***, AnoTorneio, Colocação)   
+Participa (***CódigoTenista***, ***CódigoTorneio***, **AnoTorneio**, Colocação)   
 	CódigoTenista Referencia Tenista   
 	CódigoTorneio Referencia Torneio   
 
