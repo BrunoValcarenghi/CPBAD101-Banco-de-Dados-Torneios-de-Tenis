@@ -20,6 +20,8 @@ A.	Um patrocinador pode patrocinar vários tenistas e um tenista pode ser patroc
 
 # Modelo ER:
 
+![Modelo Entidade Relacionamento](img/modeloER.PNG)
+
 ```mermaid
 erDiagram
     PAIS {
