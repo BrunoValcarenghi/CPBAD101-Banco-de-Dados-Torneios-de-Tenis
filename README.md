@@ -152,12 +152,12 @@ Participa (***CódigoTenista***, ***CódigoTorneio***, **AnoTorneio**, Colocaç�
 
 # Exercícios:
 
-1)	Insira pelo menos 5 países
-2)	Insira pelo cidades: São Paulo, Madri, França, Califórnia e Rio de janeiro
-3)	Insira torneios para essas cidades
-4)	Insira tenistas de diferentes nacionalidades 
-5)	Liste todos os países cadastrados
-6)	Liste as cidades com o nome da cidade e do país
-7)	Liste todos os tenistas por ordem alfabética com o nome da sua cidade
-8)	Liste todos os participantes desde 2020
-9)	Entre com dados premiação (torneio e tenistas)
+1)	Insira pelo menos 5 países  
+2)	Insira pelo menos 5 cidades  
+3)	Insira torneios para essas cidades  
+4)	Insira tenistas de diferentes nacionalidades   
+5)	Liste todos os países cadastrados  
+6)	Liste as cidades com o nome da cidade e do país  
+7)	Liste todos os tenistas por ordem alfabética com o nome da sua cidade  
+8)	Liste todos os participantes desde 2020    
+9)	Entre com dados na tabela particpa, relacionando torneio tenistas  
